@@ -1,0 +1,43 @@
+
+
+.totalscore{
+ max-width: 200px ;
+ text-align: center;
+
+
+}
+
+.zero{
+
+    font-size: 100px;
+    line-height: 100px ;
+  
+}
+
+.total-tex{
+    color: #000;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 500px;
+line-height: normal;
+
+}
+
+.no-column-sideway{
+    display: flex;
+     justify-content: space-around;
+     align-items: end;
+}
+
+
+.selectnumber{
+
+ font-size: 24px;
+font-weight: 700;
+padding-top: 10px;
+
+
+
+}
+

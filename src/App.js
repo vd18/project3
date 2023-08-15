@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import Home from './comonent/Home';
 import './App.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Game from './comonent/Game';
+import { styled } from 'styled-components';
+import Nothing from './Nothing';
+
 
 function App() {
+  const [setval , oldval] = useState(false)
+  const toogle = () =>{
+    oldval((preav) => !preav)
+  }
+  useEffect(() => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // You can use a modal or a styled message instead of an alert for better UX
+      alert('This is a desktop app, please open the link in desktop or laptop.');
+      return(
+<Nothing></Nothing>
+      )
+     
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>{setval ? <Game/> : <Home toogle={toogle}/>}</>
+    <div className='rules'></div>
     </div>
+
   );
+
 }
 
 export default App;
+
+
+
+
